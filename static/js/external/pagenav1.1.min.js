@@ -1,0 +1,33 @@
+﻿var pageNav=pageNav||{};
+pageNav.fn=null;
+pageNav.pageNavId="pageNav"
+pageNav.pre="pre";
+pageNav.next="next";
+pageNav.url="<a href='javascript:pageNav.go(";
+pageNav.nav=function(a,b){
+	/* if b <= 1 . */
+	if(b < 1)return "";
+	this.pn=this.p=1,this.pHtml2(1);
+	b<a&&(a=b);
+	var c="";1>=a?a=1:(c+=this.pHtml(a-1,b,pageNav.pre),c+=this.pHtml(1,b,"1"));
+	this.p=a;this.pn=b;
+	var d=2,e=9>b?b:9;7<=a&&(c+="...",d=a-4,e=a+4,e=b<e?b:e);
+	for(;d<a;d++)c+=this.pHtml(d,b);c+=this.pHtml2(a);
+	for(d=a+1;d<=e;d++)c+=this.pHtml(d,b);
+	e<b&&(c=c+"..."+this.pHtml(b,b));
+	a<b&&(c+=this.pHtml(a+1,b,pageNav.next));return c};
+pageNav.pHtml=function(a,b,c){
+	/* 显示url. */
+	if(pageNav.url.indexOf("javascript:")>0){
+		return" "+pageNav.url+a+","+b+");' class='pageNum'>"+(c||a)+"</a> ";
+	}else{
+		var str_url = pageNav.url.replace(/{index}/,a);
+		return" <a href='"+str_url+"' class='pageNum'>"+(c||a)+"</a> ";
+	}
+};
+pageNav.pHtml2=function(a){
+	return" <span class='cPageNum'>"+a+"</span> "};
+pageNav.go=function(a,b){
+	document.getElementById(pageNav.pageNavId).innerHTML=this.nav(a,b);
+	null!=this.fn&&this.fn(this.p,this.pn)
+};
