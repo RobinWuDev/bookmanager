@@ -34,45 +34,45 @@
  
  
  数据库创建语句
- `delimiter $$
-
-CREATE DATABASE `bookmanager` /*!40100 DEFAULT CHARACTER SET utf8 */$$
-
-delimiter $$
-
-CREATE TABLE `book` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) DEFAULT NULL,
-  `isbn` varchar(32) DEFAULT NULL,
-  `add_time` varchar(32) DEFAULT NULL,
-  `suncco_no` varchar(32) DEFAULT NULL,
-  `price` float DEFAULT '0',
-  `status` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8$$
-
-delimiter $$
-
-CREATE TABLE `person` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) DEFAULT NULL,
-  `suncco_no` varchar(32) DEFAULT NULL,
-  `type` int(11) DEFAULT '0',
-  `email` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8$$
-
-delimiter $$
-
-CREATE TABLE `record` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `book_id` varchar(32) DEFAULT NULL,
-  `person_id` varchar(32) DEFAULT NULL,
-  `status` int(11) DEFAULT '1',
-  `borrow_time` varchar(32) DEFAULT NULL,
-  `remand_time` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8$$`
+	 delimiter $$
+	
+	CREATE DATABASE `bookmanager` /*!40100 DEFAULT CHARACTER SET utf8 */$$
+	
+	delimiter $$
+	
+	CREATE TABLE `book` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `name` varchar(32) DEFAULT NULL,
+	  `isbn` varchar(32) DEFAULT NULL,
+	  `add_time` varchar(32) DEFAULT NULL,
+	  `suncco_no` varchar(32) DEFAULT NULL,
+	  `price` float DEFAULT '0',
+	  `status` int(11) DEFAULT '0',
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8$$
+	
+	delimiter $$
+	
+	CREATE TABLE `person` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `name` varchar(32) DEFAULT NULL,
+	  `suncco_no` varchar(32) DEFAULT NULL,
+	  `type` int(11) DEFAULT '0',
+	  `email` varchar(32) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8$$
+	
+	delimiter $$
+	
+	CREATE TABLE `record` (
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `book_id` varchar(32) DEFAULT NULL,
+	  `person_id` varchar(32) DEFAULT NULL,
+	  `status` int(11) DEFAULT '1',
+	  `borrow_time` varchar(32) DEFAULT NULL,
+	  `remand_time` varchar(32) DEFAULT NULL,
+	  PRIMARY KEY (`id`)
+	) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8$$
  
  
  
